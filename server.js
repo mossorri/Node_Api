@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const proudctRoute = require('./routes/productRoutes');
+const usersRoute = require('./routes/usersRoutes')
 const errorMiddleware = require('./middleware/errorMiddleware')
 var cors = require('cors')
 
@@ -22,8 +23,9 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
 //routes
-
 app.use('/api/products', proudctRoute);
+app.use('/api/', usersRoute);
+// app.use('/api/users', usersRoute);
 
 app.get('/', (req, res) => {
     res.send('Hello this app is working fine...')
