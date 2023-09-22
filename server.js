@@ -1,42 +1,4 @@
-// require('dotenv').config();
-// const express = require("express");
-// const mongoose = require("mongoose");
-// const productRoutes = require('./routes/productRoutes')
-// const app = express();
-
-// // adding middleware
-// app.use(express.json());
-// // app.use('/api', productRoutes);
-// app.use('/api/products', productRoutes);
-
-
-// const PORT = process.env.PORT || 3000 
-// // const PORT = 3000
-// // protect my mongodb driver and saving it at env file
-// const MONGO_URL = process.env.MONGO_URL
-
-// // Declaring routes for the app or endpoints
-// app.get("/", (req, res) => {
-//   res.send("Hello is working...");
-// });
-
-
-// mongoose.set("strictQuery", false);
-
-// // connecting mongoose database
-// mongoose
-//   .connect(MONGO_URL)
-//   .then(() => {
-//     app.listen(PORT, () => {
-//       console.log(`Server running on port ${PORT}...`);
-//     });
-//     console.log("Connected to MongoDB database...");
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
-
-
+// importing require modules
 require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
@@ -64,7 +26,7 @@ app.use(express.urlencoded({extended: false}))
 app.use('/api/products', proudctRoute);
 
 app.get('/', (req, res) => {
-    res.send('Hello NODE API')
+    res.send('Hello this app is working fine...')
 })
 
 app.get('/blog', (req, res) => {
